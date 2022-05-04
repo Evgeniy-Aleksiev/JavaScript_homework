@@ -1,10 +1,8 @@
 function readText(input){
     let index = 0
-    let text = input[index]
-    index++
 
-    while (text !== "Stop"){
-        console.log(text)
+    while (input[index] !== "Stop"){
+        console.log(input[index])
         index++
     }
 }
