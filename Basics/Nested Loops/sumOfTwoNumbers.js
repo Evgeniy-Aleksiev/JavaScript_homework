@@ -12,17 +12,17 @@ function sumOfTwoNumbers(input){
             
             if (y + x === magicNumber){
                 isFound = true;
-                console.log(`Combination N:${combinationNumber} (${x} + ${y} = ${magicNumber})`)
+                console.log(`Combination N:${combinationNumber} (${x} + ${y} = ${magicNumber})`);
                 break;    
             }
         }
         if (isFound){
-            break
+            break;
         }
     }
     
     if (isFound === false){
-        console.log(`${combinationNumber} combinations - neither equals 20`)
+        console.log(`${combinationNumber} combinations - neither equals ${magicNumber}`);
     }
 }
 
