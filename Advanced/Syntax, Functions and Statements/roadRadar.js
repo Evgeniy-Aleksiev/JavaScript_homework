@@ -1,7 +1,7 @@
 function roadRadar(currentSpeed, area){;
     let difference = 0;
     let isOverLimit = false;
-    let speedLimit = 0
+    let speedLimit = 0;
 
     if (area == 'motorway'){
         speedLimit = 130;
@@ -34,18 +34,18 @@ function roadRadar(currentSpeed, area){;
     };
 
     if (isOverLimit){
-        let status = ''
+        let status = '';
         if (difference <= 20){
-            status = 'speeding'
+            status = 'speeding';
         } else if (difference <= 40){
-            status = 'excessive speeding'
+            status = 'excessive speeding';
         } else {
-            status = 'reckless driving'
+            status = 'reckless driving';
         }
-        console.log(`The speed is ${difference} km/h faster than the allowed speed of ${speedLimit} - ${status}`)
+        console.log(`The speed is ${difference} km/h faster than the allowed speed of ${speedLimit} - ${status}`);
     } else {
         console.log(`Driving ${currentSpeed} km/h in a ${speedLimit} zone`);
-    }
-}
+    };
+};
 
 roadRadar(200, 'motorway');
