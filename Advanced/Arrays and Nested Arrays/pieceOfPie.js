@@ -6,7 +6,6 @@ function pieceOfPie(arr, flavorOne, flavorTwo){
         if (startIter){
             newArr.push(flavour);
             if (flavour === flavorTwo){
-                console.log(newArr);
                 return newArr;
             }
         } else if (flavour === flavorOne){
