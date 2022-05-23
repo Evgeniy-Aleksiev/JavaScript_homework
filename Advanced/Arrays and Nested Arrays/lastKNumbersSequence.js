@@ -7,7 +7,7 @@ function lastKNumbersSequence(n, k) {
          result.push(currentElement);
     }
 
-    console.log(result);
+    return result;
  }
 
 lastKNumbersSequence(6, 3);
