@@ -42,9 +42,51 @@ console.log(cars);
 // Changes the contents of an array by removin or replacing 
 
 let nums = [1, 2, 3, 4, 5, 6];
-nums.splice(1, 0, 2) // add 2 to index 1
-console.log(nums)
+nums.splice(1, 0, 2); // add 2 to index 1
+console.log(nums);
 nums.splice(1, 1, 19) // replace 1 element at index 1 
 console.log(nums);
-nums.splice(1, 1) // remove 1 element at index 1
+nums.splice(1, 1); // remove 1 element at index 1
 console.log(nums); 
+let coppyArray = nums.slice()
+console.log(coppyArray);
+
+// fills all the elements of an array from a start index to end index with a static value
+
+console.log(nums.fill(0, 2, 4)); // start index 2 , until 4 position
+console.log(nums.fill(5, 1)); // fill with 5 from position 1
+console.log(nums.fill(6)); // fill with 6 all the array
+
+// sort items by number or alphabet
+
+nums = [2, 30, 1, 5, 6, 40]; // by first number
+nums.sort();
+console.log(nums);
+
+// if result < 0, a is sorted before b
+// if result > 0, a is sorted after b
+// if resullt = 0, a and b are equal (no change)
+
+nums.sort((a, b) => a - b); 
+console.log(nums);
+
+let names = ['Pesho', 'Alex', 'goshka', 'Gosho', 'Mary', 'asen'];
+names.sort();
+console.log(names); 
+names.sort((a, b) => a.localeCompare(b));
+console.log(names);
+
+// concat numbers
+
+const num1 = [1, 2, 4];
+const num2 = [3, 5, 7];
+const num3 = [8, 6, 9];
+const numbers = num1.concat(num2, num3);
+console.log(numbers);
+
+// indexOf() return the firt index at which a given element can be found in the array
+
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+console.log(beasts.indexOf('bison'));
+console.log(beasts.indexOf('bison', 2));
+console.log(beasts.indexOf('giraffe'))
