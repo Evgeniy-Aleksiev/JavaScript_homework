@@ -3,16 +3,16 @@ function solve(commands){
     
     for (let index in commands){
         if (commands[index] == 'add'){
-            numbers.push(Number(index) + 1)
+            numbers.push(Number(index) + 1);
         } else {
-            numbers.pop()
+            numbers.pop();
         }
     }
     if (numbers.length > 0){
         console.log(numbers.join('\n'));
     } else {
-        console.log('Empty')
-    }
+        console.log('Empty');
+    };
 }
 
 solve(['remove', 
