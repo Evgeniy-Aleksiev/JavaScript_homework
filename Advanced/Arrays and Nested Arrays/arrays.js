@@ -142,3 +142,13 @@ function filterItems(arr, query){
 };
 
 console.log(filterItems(fruits, 'ap'));
+
+
+// Reduce: executes a reducer function on each element of the array, resulting in a single output value
+
+const array2 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+console.log(array2.reduce(reducer));
+console.log(array2.reduce(reducer, 5));
+const red = (a, b) => a - b;
+console.log(array.reduce(red));
