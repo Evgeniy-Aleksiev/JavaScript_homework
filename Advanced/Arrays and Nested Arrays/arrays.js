@@ -89,4 +89,56 @@ console.log(numbers);
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 console.log(beasts.indexOf('bison'));
 console.log(beasts.indexOf('bison', 2));
-console.log(beasts.indexOf('giraffe'))
+console.log(beasts.indexOf('giraffe'));
+
+const items = ['item1', 'item2', 'item3'];
+const copy = [];
+
+// for loop
+for (let i = 0; i < items.length; i++){
+    copy.push(items[i]);
+}
+console.log(copy)
+
+// forEach
+const copy2 = [];
+items.forEach(item => {copy2.push(item); });
+console.log(copy2);
+
+// Map: creates a new array with the results of clalling a provvided function
+
+let x = [1, 4, 9];
+let roots = x.map(function(num, i, arr){
+    return Math.sqrt(num);
+});
+console.log(roots);
+console.log(x);
+
+// The some() method tests whether at least one element in the array passes the test
+
+let array = [1, 2, 3, 4, 5, 6];
+let isEven = function(element){
+    return element % 2 === 0;
+};
+
+console.log(array.some(isEven));
+
+// Find returns the first found value in the array
+
+let array1 = [5, 12, 8, 130, 44];
+let found = array1.find(function(element){
+    return element > 10;
+});
+console.log(found);
+
+// Filter: creates a new array with filtered elements only
+
+let fruits = ['apple', 'banana', 'grapes', 'mango'];
+
+function filterItems(arr, query){
+    return arr.filter(function(el){
+        return el.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    });
+};
+
+console.log(filterItems(fruits, 'ap'));
