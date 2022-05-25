@@ -5,8 +5,8 @@ function solve(array){
         let currentNum = array[index];
 
         if (currentNum >= biggest){
-            newArray.push(currentNum)
-            biggest = currentNum
+            newArray.push(currentNum);
+            biggest = currentNum;
         }
     }
 
