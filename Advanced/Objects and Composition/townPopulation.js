@@ -9,12 +9,11 @@ function solve(array){
             towns[town] += population; 
         } else {
         towns[town] = population;
-        }
-    }
+        };
+    };
     for (let line in towns){
         console.log(`${line} : ${towns[line]}`);
-    }
-
+    };
 }
 
 solve(['Sofia <-> 1200000',
