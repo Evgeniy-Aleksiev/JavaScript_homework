@@ -13,8 +13,11 @@ function solve() {
         types[type]++;
     }
 
-    const result = Object.entries(types).sort((a, b) => b[1] - a[1])
-    console.log(result);
+    const result = Object.entries(types).sort((a, b) => b[1] - a[1]);
+    
+    for (let [type, count] of result){
+        console.log(`${type} = ${count}`);
+    }
 }
 
 solve(1, 2, 3);
