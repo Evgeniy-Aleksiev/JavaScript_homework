@@ -52,17 +52,17 @@ class Garden {
         this.plants.splice(plantIndex, 1);
         this.storage.push({
             plantName,
-            quantity: plant.quantity,
-        })
+            quantity: plant.quantity
+        });
         this.spaceAvailable += plant.spaceRequired;
         return `The ${plantName} has been successfully harvested.`
     }
 
     generateReport(){
-        const plantAsString = this.plants.map(p => p.plantName);
-        const plantRow = `Plants in the garden: ${plantAsString.join(', ')}`;
+        const plantAsString = this.plants.map(p => p.plantName).sort((a, b) => a.localeCompare(b));
+        const plantsRow = `Plants in the garden: ${plantAsString.join(', ')}`;
 
-        const storageRow = 'Plants in storage: The storage is empty.';
+        let storageRow = 'Plants in storage: The storage is empty.';
         if (this.storage.length > 0) {
             const storageAsString = this.storage.map(p => `${p.plantName} (${p.quantity})`);
             storageRow = `Plants in storage: ${storageAsString.join(', ')}`;
@@ -70,19 +70,18 @@ class Garden {
 
         return [
             `The garden has ${this.spaceAvailable} free space left.`,
-            plantRow,
-
+            plantsRow,
+            storageRow,
         ].join('\n');
     }
 }
 
 const myGarden = new Garden(250)
-
-assert.equal(myGarden.addPlant("apple", 20), "The apple has been successfully planted in the garden.");
-assert.equal(myGarden.addPlant("orange", 200), "The orange has been successfully planted in the garden.");
-assert.equal(myGarden.addPlant("raspberry", 10), "The raspberry has been successfully planted in the garden.");
-assert.equal(myGarden.ripenPlant("apple", 10), "10 apples have successfully ripened.");
-assert.equal(myGarden.ripenPlant("orange", 1), "1 orange has successfully ripened.");
-assert.equal(myGarden.harvestPlant("orange"), "The orange has been successfully harvested.");
-assert.equal(myGarden.generateReport(), "The garden has 220 free space left.\nPlants in the garden: apple, raspberry\nPlants in storage: orange (1)");
+console.log(myGarden.addPlant('apple', 20));
+console.log(myGarden.addPlant('orange', 200));
+console.log(myGarden.addPlant("raspberry", 10));
+console.log(myGarden.ripenPlant('apple', 10));
+console.log(myGarden.ripenPlant('orange', 1));
+console.log(myGarden.harvestPlant("orange"));
+console.log(myGarden.generateReport());
 
